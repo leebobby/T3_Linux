@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>image/play.png</file>
+        <file>image/camera.png</file>
+        <file>image/change.png</file>
+        <file>image/lock.png</file>
+        <file>image/record.png</file>
+        <file>image/setting.png</file>
+        <file>image/movie.png</file>
+    </qresource>
+</RCC>
