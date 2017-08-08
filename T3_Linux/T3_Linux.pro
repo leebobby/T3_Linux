@@ -25,13 +25,33 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        main_desktop.cpp
+        main_desktop.cpp \
+    settings.cpp \
+    about.cpp \
+    preview.cpp \
+    adas.cpp \
+    reverseline.cpp \
+    timesetting.cpp
 
 HEADERS += \
-        main_desktop.h
+        main_desktop.h \
+    settings.h \
+    about.h \
+    preview.h \
+    adas.h \
+    reverseline.h \
+    timesetting.h
 
 FORMS += \
-        main_desktop.ui
+        main_desktop.ui \
+    settings.ui \
+    about.ui \
+    preview.ui \
+    adas.ui \
+    reverseline.ui \
+    timesetting.ui
 
 RESOURCES += \
     image.qrc
+
+

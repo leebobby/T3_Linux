@@ -133,7 +133,20 @@
     <string>正北</string>
    </property>
   </widget>
-  <zorder>compassButton</zorder>
+  <widget class="QLabel" name="cameraView">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>618</width>
+     <height>215</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>cameraView</zorder>
   <zorder>cameraButton</zorder>
   <zorder>lockButton</zorder>
   <zorder>recordButton</zorder>
@@ -142,12 +155,6 @@
   <zorder>camera_change_Button</zorder>
   <zorder>time_Label</zorder>
   <zorder>unknowButton</zorder>
-  <zorder>horizontalSpacer</zorder>
-  <zorder>horizontalSpacer_2</zorder>
-  <zorder>horizontalSpacer_3</zorder>
-  <zorder>horizontalSpacer_4</zorder>
-  <zorder>horizontalSpacer_5</zorder>
-  <zorder>horizontalSpacer_6</zorder>
   <zorder>compassButton</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

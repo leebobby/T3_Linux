@@ -6,6 +6,9 @@
         <file>image/lock.png</file>
         <file>image/record.png</file>
         <file>image/setting.png</file>
-        <file>image/movie.png</file>
+        <file>image/movie1.png</file>
+        <file>image/picture.png</file>
+        <file>image/picture1.png</file>
+        <file>image/return.png</file>
     </qresource>
 </RCC>
