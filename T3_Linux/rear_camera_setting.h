@@ -2,7 +2,7 @@
 #define REAR_CAMERA_SETTING_H
 
 #include <QDialog>
-
+#include <QDebug>
 namespace Ui {
 class Rear_Camera_Setting;
 }
@@ -15,7 +15,10 @@ public:
     explicit Rear_Camera_Setting(QWidget *parent = 0);
     ~Rear_Camera_Setting();
 public slots:
-    void on_returnButton_click(bool);
+    void on_returnButton_clicked(bool);
+    void on_sureButton_clicked(bool);
+    void on_upperButton_clicked(bool);
+    void on_downButton_clicked(bool);
 private:
     Ui::Rear_Camera_Setting *ui;
 };
