@@ -41,7 +41,9 @@ SOURCES += \
     editwidget.cpp \
     rear_camera_setting.cpp \
     front_camera_setting.cpp \
-    mylabel.cpp
+    mylabel.cpp \
+    rear_adas_setting.cpp \
+    front_adas_setting.cpp
 
 HEADERS += \
         main_desktop.h \
@@ -60,7 +62,9 @@ HEADERS += \
     editwidget.h \
     rear_camera_setting.h \
     front_camera_setting.h \
-    mylabel.h
+    mylabel.h \
+    rear_adas_setting.h \
+    front_adas_setting.h
 
 FORMS += \
         main_desktop.ui \
@@ -77,7 +81,9 @@ FORMS += \
     picturewidget.ui \
     editwidget.ui \
     rear_camera_setting.ui \
-    front_camera_setting.ui
+    front_camera_setting.ui \
+    rear_adas_setting.ui \
+    front_adas_setting.ui
 
 RESOURCES += \
     image.qrc

@@ -5,6 +5,8 @@
 #include <QDebug>
 #include <QVBoxLayout>
 #include "mylabel.h"
+#include "rear_adas_setting.h"
+#include "front_adas_setting.h"
 namespace Ui {
 class ADAS;
 }
@@ -21,6 +23,8 @@ public slots:
     void on_pictureLabel1_clicked();
 private:
     Ui::ADAS *ui;
+    rear_ADAS_setting* rear_adas_settings;
+    front_ADAS_setting* front_adas_settings;
     myLabel* front_ADAS_label;
     myLabel* rear_ADAS_label;
 };

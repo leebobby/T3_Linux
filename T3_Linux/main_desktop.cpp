@@ -1,6 +1,6 @@
 #include "main_desktop.h"
 #include "ui_main_desktop.h"
-
+#include <QDesktopWidget>
 main_desktop::main_desktop(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::main_desktop)
@@ -10,7 +10,7 @@ main_desktop::main_desktop(QWidget *parent) :
     //设置窗口为固定大小
     this->setMaximumSize(610,215);
     this->setMinimumSize(610,215);
-
+    isLocked=false;
     //设置按钮图标
     //对于当点击图标后按钮的变化的效果可以使用多张图片的方式进行
     ui->cameraButton->setStyleSheet(tr("background-image: url(:/image/image/camera.png);","background-color:transparent"));
@@ -140,9 +140,10 @@ void main_desktop::show_settingDesk()
     setting_desktop->exec();
 
 }
+//暂时做成截图功能
 void main_desktop::show_photoDesk()
 {
-    qDebug()<<"open photo";
+    qDebug()<<"修改为截图功能";
 }
 void main_desktop::show_movieDesk()
 {
@@ -164,3 +165,62 @@ void main_desktop::show_dashboard()
 //    qDebug()<<"I will accept data";
 //    qDebug()<<setting_result.testString;
 //}
+//截图的方法
+void main_desktop::on_cameraButton_clicked()
+{
+//    screenshot_pic=QScreen::grabWindow(this,0,0,600,200);
+    ui->cameraButton->setVisible(true);
+    ui->camera_change_Button->setVisible(true);
+    ui->lockButton->setVisible(true);
+    ui->movieButton->setVisible(true);
+    ui->recordButton->setVisible(true);
+    ui->setFirstButton->setVisible(true);
+    ui->compassButton->setVisible(true);
+    QScreen * pqscreen  = QGuiApplication::primaryScreen() ;
+    QPixmap pixmap = pqscreen->grabWindow( QApplication::activeWindow()->winId(), -2,-2,QApplication::activeWindow()->width() + 1, QApplication::activeWindow()->height() + 1);
+
+    //截图保存
+    QString filename=QFileDialog::getSaveFileName(this,"ScreenShot Save",QDir::currentPath());
+    if(!filename.isEmpty()){
+        pixmap.save(filename);
+    }else{
+        QMessageBox::information(this,"错误","请选择一个名称 ");
+        return;
+    }
+    ui->cameraButton->setVisible(false);
+    ui->camera_change_Button->setVisible(false);
+    ui->lockButton->setVisible(false);
+    ui->movieButton->setVisible(false);
+    ui->recordButton->setVisible(false);
+    ui->setFirstButton->setVisible(false);
+    ui->compassButton->setVisible(false);
+}
+//锁定屏幕，使用锁定屏幕所有按钮的方法
+void main_desktop::on_lockButton_clicked()
+{
+    if(isLocked==false){
+        ui->cameraButton->setEnabled(true);
+        ui->camera_change_Button->setEnabled(true);
+        ui->movieButton->setEnabled(true);
+        ui->recordButton->setEnabled(true);
+        ui->setFirstButton->setEnabled(true);
+        ui->compassButton->setEnabled(true);
+
+        isLocked=true;
+    }else{
+        ui->cameraButton->setEnabled(false);
+        ui->camera_change_Button->setEnabled(false);
+        ui->movieButton->setEnabled(false);
+        ui->recordButton->setEnabled(false);
+        ui->setFirstButton->setEnabled(false);
+        ui->compassButton->setEnabled(false);
+        ui->cameraButton->setVisible(false);
+        ui->camera_change_Button->setVisible(false);
+        ui->lockButton->setVisible(false);
+        ui->movieButton->setVisible(false);
+        ui->recordButton->setVisible(false);
+        ui->setFirstButton->setVisible(false);
+        ui->compassButton->setVisible(false);
+        isLocked=false;
+    }
+}

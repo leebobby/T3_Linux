@@ -30,8 +30,12 @@ ADAS::~ADAS()
 void ADAS::on_pictureLabel1_clicked()
 {
     qDebug()<<"打开后ADAS设置界面";
+    rear_adas_settings=new rear_ADAS_setting();
+    rear_adas_settings->exec();
 }
 void ADAS::on_pictureLabel2_clicked()
 {
     qDebug()<<"打开前ADAS设置界面";
+    front_adas_settings=new front_ADAS_setting();
+    front_adas_settings->exec();
 }
