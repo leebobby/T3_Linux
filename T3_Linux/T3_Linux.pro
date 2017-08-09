@@ -40,7 +40,8 @@ SOURCES += \
     picturewidget.cpp \
     editwidget.cpp \
     rear_camera_setting.cpp \
-    front_camera_setting.cpp
+    front_camera_setting.cpp \
+    mylabel.cpp
 
 HEADERS += \
         main_desktop.h \
@@ -58,7 +59,8 @@ HEADERS += \
     picturewidget.h \
     editwidget.h \
     rear_camera_setting.h \
-    front_camera_setting.h
+    front_camera_setting.h \
+    mylabel.h
 
 FORMS += \
         main_desktop.ui \

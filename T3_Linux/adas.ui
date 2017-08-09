@@ -28,19 +28,6 @@
    <property name="title">
     <string>         后摄像头ADAS设置</string>
    </property>
-   <widget class="QLabel" name="pictureLabel2_2">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>40</y>
-      <width>161</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QLabel" name="pictureLabel2">
     <property name="geometry">
      <rect>
@@ -70,19 +57,6 @@
    <property name="title">
     <string>         前摄像ADAS设置</string>
    </property>
-   <widget class="QLabel" name="pictureLabel1">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>40</y>
-      <width>161</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
   </widget>
  </widget>
  <resources/>

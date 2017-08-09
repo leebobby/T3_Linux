@@ -40,3 +40,11 @@ void movieDesk::on_returnButton_clicked()
 {
     this->close();
 }
+void movieDesk::on_mainCameraButton_clicked()
+{
+    qDebug()<<"调整为主摄像头";
+}
+void movieDesk::on_viceButton_clicked()
+{
+    qDebug()<<"调整为副摄像头";
+}

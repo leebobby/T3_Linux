@@ -28,19 +28,6 @@
    <property name="title">
     <string>            倒车线设置</string>
    </property>
-   <widget class="QLabel" name="pictureLabel2_2">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>40</y>
-      <width>161</width>
-      <height>111</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
   </widget>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
@@ -57,19 +44,6 @@
    <property name="title">
     <string>           倒车后视预览</string>
    </property>
-   <widget class="QLabel" name="pictureLabel1">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>40</y>
-      <width>161</width>
-      <height>111</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
   </widget>
  </widget>
  <resources/>

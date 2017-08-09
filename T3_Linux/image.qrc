@@ -14,5 +14,9 @@
         <file>image/voice.png</file>
         <file>image/GPS.png</file>
         <file>image/camera2.png</file>
+        <file>image/frontCamera.png</file>
+        <file>image/rearCamera.png</file>
+        <file>image/reverseline1.png</file>
+        <file>image/reverseline2.png</file>
     </qresource>
 </RCC>

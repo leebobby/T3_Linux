@@ -6,6 +6,8 @@ Preview::Preview(QWidget *parent) :
     ui(new Ui::Preview)
 {
     ui->setupUi(this);
+    ui->pictureLabel1->setStyleSheet(tr("background-image: url(:/image/image/frontCamera.png);"));
+    ui->pictureLabel2->setStyleSheet(tr("background-image: url(:/image/image/rearCamera.png);"));
     connect(ui->front_set_Button,SIGNAL(clicked(bool)),this,SLOT(on_frontButton_clicked(bool)));
     connect(ui->rear_set_Button,SIGNAL(clicked(bool)),this,SLOT(on_rearButton_clicked(bool)));
 

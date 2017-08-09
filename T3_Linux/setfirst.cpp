@@ -32,6 +32,13 @@ SetFirst::SetFirst(QWidget *parent) :
                 qDebug() << "Text : "  << ui->movieTimeSetting->text();
             });
 
+    //设置四个按钮的样式:按下和弹起操作
+    ui->audioButton->setCheckable(true);
+    ui->ADASButton->setCheckable(true);
+    ui->reverseButton->setCheckable(true);
+    ui->movieButton->setCheckable(true);
+
+
 }
 SetFirst::~SetFirst()
 {
@@ -59,5 +66,41 @@ void SetFirst::on_slider_valuechanged(int n_value)
     }
     else{
         qDebug()<<"没有收到声音和亮度调节的信号";
+    }
+}
+void SetFirst::on_audioButton_clicked()
+{
+    if(ui->audioButton->isChecked()){
+        qDebug()<<"录音按钮处于按下状态";
+    }
+    else{
+        qDebug()<<"录音按钮处于弹起状态";
+    }
+}
+void SetFirst::on_ADASButton_clicked()
+{
+    if(ui->ADASButton->isChecked()){
+        qDebug()<<"ADAS按钮处于按下状态";
+    }
+    else{
+        qDebug()<<"ADAS按钮处于弹起状态";
+    }
+}
+void SetFirst::on_movieButton_clicked()
+{
+    if(ui->movieButton->isChecked()){
+        qDebug()<<"录像按钮处于按下状态";
+    }
+    else{
+        qDebug()<<"录像按钮处于弹起状态";
+    }
+}
+void SetFirst::on_reverseButton_clicked()
+{
+    if(ui->reverseButton->isChecked()){
+        qDebug()<<"倒车线按钮处于按下状态";
+    }
+    else{
+        qDebug()<<"倒车线按钮处于弹起状态";
     }
 }

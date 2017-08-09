@@ -70,7 +70,7 @@
    <property name="title">
     <string>         后摄像头预览设置</string>
    </property>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="pictureLabel2">
     <property name="geometry">
      <rect>
       <x>20</x>

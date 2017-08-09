@@ -19,6 +19,10 @@ public:
 public slots://界面切换
     void on_click_setttingsButton(bool);
     void on_click_returnButton(bool);
+    void on_audioButton_clicked();
+    void on_ADASButton_clicked();
+    void on_movieButton_clicked();
+    void on_reverseButton_clicked();
 public slots:
     void on_slider_valuechanged(int);
 private:

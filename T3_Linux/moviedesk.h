@@ -19,6 +19,8 @@ public:
     ~movieDesk();
 public slots:
     void on_returnButton_clicked();
+    void on_mainCameraButton_clicked();
+    void on_viceButton_clicked();
 private:
     Ui::movieDesk *ui;
 private:
