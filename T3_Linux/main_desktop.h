@@ -7,9 +7,11 @@
 #include <QDateTime>
 #include <QString>
 #include <QTimer>
-#include <settings.h>
-
-
+#include <QPalette>
+//#include <settings.h>
+#include "setfirst.h"
+#include "dashboard.h"
+#include "moviedesk.h"
 namespace Ui {
 class main_desktop;
 }
@@ -42,8 +44,11 @@ public slots://其它界面调出
     void show_settingDesk();
     void show_movieDesk();
     void show_photoDesk();
+    void show_dashboard();
 private://界面类
-    Settings *setting_desktop;
+    SetFirst *setting_desktop;
+    dashBoard *dashboards;
+    movieDesk *moviedesk;
 //public slots://返回值
 //    void recieve_setting_data(results);
 

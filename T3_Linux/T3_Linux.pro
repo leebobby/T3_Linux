@@ -31,7 +31,16 @@ SOURCES += \
     preview.cpp \
     adas.cpp \
     reverseline.cpp \
-    timesetting.cpp
+    timesetting.cpp \
+    setfirst.cpp \
+    dashboard.cpp \
+    myspeed.cpp \
+    moviedesk.cpp \
+    videowidget.cpp \
+    picturewidget.cpp \
+    editwidget.cpp \
+    rear_camera_setting.cpp \
+    front_camera_setting.cpp
 
 HEADERS += \
         main_desktop.h \
@@ -40,7 +49,16 @@ HEADERS += \
     preview.h \
     adas.h \
     reverseline.h \
-    timesetting.h
+    timesetting.h \
+    setfirst.h \
+    dashboard.h \
+    myspeed.h \
+    moviedesk.h \
+    videowidget.h \
+    picturewidget.h \
+    editwidget.h \
+    rear_camera_setting.h \
+    front_camera_setting.h
 
 FORMS += \
         main_desktop.ui \
@@ -49,7 +67,15 @@ FORMS += \
     preview.ui \
     adas.ui \
     reverseline.ui \
-    timesetting.ui
+    timesetting.ui \
+    setfirst.ui \
+    dashboard.ui \
+    moviedesk.ui \
+    videowidget.ui \
+    picturewidget.ui \
+    editwidget.ui \
+    rear_camera_setting.ui \
+    front_camera_setting.ui
 
 RESOURCES += \
     image.qrc

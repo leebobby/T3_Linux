@@ -10,5 +10,9 @@
         <file>image/picture.png</file>
         <file>image/picture1.png</file>
         <file>image/return.png</file>
+        <file>image/light.png</file>
+        <file>image/voice.png</file>
+        <file>image/GPS.png</file>
+        <file>image/camera2.png</file>
     </qresource>
 </RCC>

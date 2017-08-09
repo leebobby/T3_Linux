@@ -42,14 +42,15 @@ private:
 class CustomTabStyle : public QProxyStyle
 {
 public:
+    explicit CustomTabStyle(int x,int y):width(x),height(y){}
     QSize sizeFromContents(ContentsType type, const QStyleOption *option,
         const QSize &size, const QWidget *widget) const
     {
         QSize s = QProxyStyle::sizeFromContents(type, option, size, widget);
         if (type == QStyle::CT_TabBarTab) {
             s.transpose();
-            s.rwidth() = 90; // 设置每个tabBar中item的大小
-            s.rheight() = 35;
+            s.rwidth() = this->width; // 设置每个tabBar中item的大小
+            s.rheight() = this->height;
         }
         return s;
     }
@@ -85,6 +86,9 @@ public:
             QProxyStyle::drawControl(element, option, painter, widget);
         }
     }
+private:
+    int width;
+    int height;
 };
 
 #endif // SETTINGS_H

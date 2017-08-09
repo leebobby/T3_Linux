@@ -18,7 +18,7 @@ main_desktop::main_desktop(QWidget *parent) :
     ui->lockButton->setStyleSheet(tr("background-image: url(:/image/image/lock.png);"));
     ui->movieButton->setStyleSheet(tr("background-image: url(:/image/image/movie1.png);"));
     ui->recordButton->setStyleSheet(tr("background-image: url(:/image/image/record.png);"));
-    ui->settingButton->setStyleSheet(tr("background-image: url(:/image/image/setting.png);"));
+    ui->setFirstButton->setStyleSheet(tr("background-image: url(:/image/image/setting.png);"));
 
     //设置系统时间和显示
     QTimer *timer = new QTimer(this);
@@ -44,7 +44,7 @@ main_desktop::main_desktop(QWidget *parent) :
     ui->lockButton->setVisible(true);
     ui->movieButton->setVisible(true);
     ui->recordButton->setVisible(true);
-    ui->settingButton->setVisible(true);
+    ui->setFirstButton->setVisible(true);
     ui->compassButton->setVisible(true);
     setMouseTracking(true);
     mouseMoveTime = new QTimer();
@@ -52,9 +52,10 @@ main_desktop::main_desktop(QWidget *parent) :
     mouseMoveTime->start(8000);
 
     //调出其它界面的信号
-    connect(ui->settingButton,SIGNAL(clicked()),this,SLOT(show_settingDesk()));
-    connect(ui->cameraButton,SIGNAL(clicked()),this,SLOT(show_photoDesk()));
-    connect(ui->movieButton,SIGNAL(clicked()),this,SLOT(show_movieDesk()));
+    connect(ui->setFirstButton,SIGNAL(clicked(bool)),this,SLOT(show_settingDesk()));
+    connect(ui->cameraButton,SIGNAL(clicked(bool)),this,SLOT(show_photoDesk()));
+    connect(ui->movieButton,SIGNAL(clicked(bool)),this,SLOT(show_movieDesk()));
+    connect(ui->compassButton,SIGNAL(clicked(bool)),this,SLOT(show_dashboard()));
 
 
 }
@@ -96,7 +97,7 @@ void main_desktop::on_mouse_no_active_10_second()
     ui->lockButton->setVisible(false);
     ui->movieButton->setVisible(false);
     ui->recordButton->setVisible(false);
-    ui->settingButton->setVisible(false);
+    ui->setFirstButton->setVisible(false);
     ui->compassButton->setVisible(false);
 }
 //有操作出现
@@ -110,7 +111,7 @@ void main_desktop::on_mouse_active()
     ui->lockButton->setVisible(true);
     ui->movieButton->setVisible(true);
     ui->recordButton->setVisible(true);
-    ui->settingButton->setVisible(true);
+    ui->setFirstButton->setVisible(true);
     ui->compassButton->setVisible(true);
 }
 //重写QWidget的4个方法来保证有动作时显示，没动作时隐藏
@@ -134,7 +135,7 @@ void main_desktop::mouseReleaseEvent(QMouseEvent *)
 //打开新的界面
 void main_desktop::show_settingDesk()
 {
-    setting_desktop=new Settings();
+    setting_desktop=new SetFirst();
 //    connect(setting_desktop,SIGNAL(send_data_to_main(results)),this,SLOT(recieve_setting_data(results)));
     setting_desktop->exec();
 
@@ -146,6 +147,17 @@ void main_desktop::show_photoDesk()
 void main_desktop::show_movieDesk()
 {
     qDebug()<<"open movie";
+    moviedesk=new movieDesk();
+    moviedesk->exec();
+}
+void main_desktop::show_dashboard()
+{
+    dashboards=new dashBoard();
+    QPalette pal(dashboards->palette());
+    pal.setColor(QPalette::Background, Qt::black); //设置背景黑色
+    dashboards->setAutoFillBackground(true);
+    dashboards->setPalette(pal);
+    dashboards->exec();
 }
 //void main_desktop::recieve_setting_data(results setting_result)
 //{

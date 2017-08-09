@@ -41,6 +41,19 @@
      <string/>
     </property>
    </widget>
+   <widget class="QPushButton" name="front_set_Button">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>150</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>预览</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QGroupBox" name="groupBox_2">
    <property name="geometry">
@@ -81,6 +94,19 @@
     </property>
     <property name="text">
      <string>摄像头制式：</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="rear_set_Button">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>140</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>预览</string>
     </property>
    </widget>
   </widget>
