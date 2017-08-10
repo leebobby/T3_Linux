@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>videoWidget</class>
- <widget class="QDialog" name="videoWidget">
+ <class>Picture_view</class>
+ <widget class="QDialog" name="Picture_view">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>445</width>
-    <height>211</height>
+    <width>182</width>
+    <height>182</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QListWidget" name="listWidget_file">
+  <widget class="QPushButton" name="closeButton">
    <property name="geometry">
     <rect>
-     <x>1</x>
-     <y>1</y>
-     <width>445</width>
-     <height>209</height>
+     <x>158</x>
+     <y>4</y>
+     <width>21</width>
+     <height>21</height>
     </rect>
+   </property>
+   <property name="text">
+    <string>×</string>
    </property>
   </widget>
  </widget>

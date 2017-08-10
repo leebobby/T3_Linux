@@ -104,3 +104,8 @@ void SetFirst::on_reverseButton_clicked()
         qDebug()<<"倒车线按钮处于弹起状态";
     }
 }
+
+void SetFirst::on_voiceButton_clicked()
+{
+    qDebug()<<"按下为静音";
+}

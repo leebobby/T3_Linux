@@ -2,7 +2,12 @@
 #define VIDEOWIDGET_H
 
 #include <QDialog>
-
+#include <QDebug>
+#include <QListWidget>
+#include <QString>
+#include <QDir>
+#include <QDirIterator>
+#include <QRect>
 namespace Ui {
 class videoWidget;
 }
@@ -17,6 +22,8 @@ public:
 
 private:
     Ui::videoWidget *ui;
+
+
 };
 
 #endif // VIDEOWIDGET_H

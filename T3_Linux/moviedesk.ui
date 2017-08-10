@@ -16,7 +16,7 @@
   <widget class="QPushButton" name="mainCameraButton">
    <property name="geometry">
     <rect>
-     <x>564</x>
+     <x>570</x>
      <y>40</y>
      <width>41</width>
      <height>31</height>
@@ -33,8 +33,8 @@ rgb(19, 74, 255)</string>
   <widget class="QPushButton" name="viceButton">
    <property name="geometry">
     <rect>
-     <x>564</x>
-     <y>130</y>
+     <x>570</x>
+     <y>133</y>
      <width>41</width>
      <height>31</height>
     </rect>
@@ -51,7 +51,7 @@ rgb(19, 74, 255)</string>
     <rect>
      <x>40</x>
      <y>0</y>
-     <width>521</width>
+     <width>528</width>
      <height>211</height>
     </rect>
    </property>

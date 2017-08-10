@@ -43,7 +43,8 @@ SOURCES += \
     front_camera_setting.cpp \
     mylabel.cpp \
     rear_adas_setting.cpp \
-    front_adas_setting.cpp
+    front_adas_setting.cpp \
+    picture_view.cpp
 
 HEADERS += \
         main_desktop.h \
@@ -64,7 +65,8 @@ HEADERS += \
     front_camera_setting.h \
     mylabel.h \
     rear_adas_setting.h \
-    front_adas_setting.h
+    front_adas_setting.h \
+    picture_view.h
 
 FORMS += \
         main_desktop.ui \
@@ -83,7 +85,8 @@ FORMS += \
     rear_camera_setting.ui \
     front_camera_setting.ui \
     rear_adas_setting.ui \
-    front_adas_setting.ui
+    front_adas_setting.ui \
+    picture_view.ui
 
 RESOURCES += \
     image.qrc

@@ -25,6 +25,9 @@ public slots://界面切换
     void on_reverseButton_clicked();
 public slots:
     void on_slider_valuechanged(int);
+private slots:
+    void on_voiceButton_clicked();
+
 private:
     Ui::SetFirst *ui;
     Settings* setSecond_Desk;
