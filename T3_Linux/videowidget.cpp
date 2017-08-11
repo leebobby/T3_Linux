@@ -81,6 +81,6 @@ void videoWidget::play_video(QModelIndex pos)
     qDebug()<<"点击了"<<pos.row();
     which_filename_to_play=item->text();
 //    which_pic_show_big=pos.row();
-    video_view=new Video_view();
-    video_view->exec();
+    video_players=new Video_Player();
+    video_players->exec();
 }

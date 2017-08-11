@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui multimedia multimediawidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 CONFIG-=console
@@ -35,7 +35,6 @@ SOURCES += \
     dashboard.cpp \
     myspeed.cpp \
     moviedesk.cpp \
-    videowidget.cpp \
     picturewidget.cpp \
     editwidget.cpp \
     rear_camera_setting.cpp \
@@ -44,7 +43,10 @@ SOURCES += \
     rear_adas_setting.cpp \
     front_adas_setting.cpp \
     picture_view.cpp \
-    video_view.cpp
+    video_view.cpp \
+    videowidget.cpp \
+    video_widgets.cpp \
+    video_player.cpp
 
 HEADERS += \
         main_desktop.h \
@@ -58,7 +60,6 @@ HEADERS += \
     dashboard.h \
     myspeed.h \
     moviedesk.h \
-    videowidget.h \
     picturewidget.h \
     editwidget.h \
     rear_camera_setting.h \
@@ -67,7 +68,10 @@ HEADERS += \
     rear_adas_setting.h \
     front_adas_setting.h \
     picture_view.h \
-    video_view.h
+    video_view.h \
+    videowidget.h \
+    video_widgets.h \
+    video_player.h
 
 FORMS += \
         main_desktop.ui \
@@ -88,7 +92,8 @@ FORMS += \
     rear_adas_setting.ui \
     front_adas_setting.ui \
     picture_view.ui \
-    video_view.ui
+    video_view.ui \
+    video_player.ui
 
 RESOURCES += \
     image.qrc

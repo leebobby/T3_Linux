@@ -10,6 +10,7 @@
 #include <QRect>
 #include <QProcess>
 #include "video_view.h"
+#include "video_player.h"
 namespace Ui {
 class videoWidget;
 }
@@ -26,6 +27,7 @@ public slots:
 private:
     Ui::videoWidget *ui;
     Video_view* video_view;
+    Video_Player* video_players;
 
 };
 
