@@ -30,10 +30,18 @@ Picture_view::Picture_view(QWidget *parent) :
             break;
         }
         else{
-            qDebug()<<"不是这张，下一张";
-//            count++;
+            continue;
         }
     }
+//    QHBoxLayout *layout1=new QHBoxLayout();
+//    layout1->addSpacing(2);
+//    layout1->addWidget(ui->closeButton);
+//    QHBoxLayout *layout2=new QHBoxLayout();
+//    layout2->addWidget(scrollArea);
+//    QHBoxLayout *layouts=new QHBoxLayout;
+//    layouts->addLayout(layout1);
+//    layouts->addLayout(layout2);
+
     //去掉scroll的边框
     scrollArea->setWidget(pictureLabel);
     scrollArea->setFrameShape(QFrame::NoFrame);
@@ -43,6 +51,7 @@ Picture_view::Picture_view(QWidget *parent) :
     scrollArea->setFixedSize(180,180);
     pictureLabel->setAlignment(Qt::AlignCenter);
     scrollArea->setAlignment(Qt::AlignCenter);  // 居中对齐
+//    scrollArea->setWidget(ui->closeButton);
 
 
 }
@@ -51,10 +60,6 @@ Picture_view::~Picture_view()
 {
     delete ui;
 }
-//void Picture_view::which_item_clicked(QModelIndex item)
-//{
-
-//}
 
 void Picture_view::on_closeButton_clicked()
 {

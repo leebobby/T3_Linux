@@ -1,6 +1,9 @@
 #include "videowidget.h"
 #include "ui_videowidget.h"
 
+// This is available in all editors.
+QString which_filename_to_play;
+
 videoWidget::videoWidget(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::videoWidget)
@@ -10,12 +13,17 @@ videoWidget::videoWidget(QWidget *parent) :
 
     ui->listWidget_file->setObjectName(QString::fromUtf8("listWidget_file"));
     ui->listWidget_file->setGeometry(QRect(0,0,0,0));
-    QDirIterator m_DirIterator(QString("E:/tech_practise/T3_linux/T3_Linux/T3_Linux/image"),QDir::Files|QDir::NoSymLinks,QDirIterator::Subdirectories);
+    QDirIterator m_DirIterator(QString("E:/tech_practise/T3_linux/T3_Linux/T3_Linux/video"),QDir::Files|QDir::NoSymLinks,QDirIterator::Subdirectories);
     qDebug()<<" 当前目录为："<<m_DirIterator.path();
-    qDebug()<<"当前文件信息为："<<m_DirIterator.fileName();
     ui->listWidget_file->clear();
     while (m_DirIterator.hasNext()) {
         QString tempFile=m_DirIterator.next();
+        qDebug()<<"当前文件信息为："<<tempFile;
+        QString tempFileName=tempFile.remove(QString("E:/tech_practise/T3_linux/T3_Linux/T3_Linux/video/"),Qt::CaseSensitive);
+        QString tempFileName_NoSuffix=tempFileName;
+        int suffix_index=tempFileName_NoSuffix.lastIndexOf(".");
+        tempFileName_NoSuffix.truncate(suffix_index);
+        qDebug()<<"去掉后缀后的文件名："<<tempFileName_NoSuffix;
         ui->listWidget_file->setIconSize(QSize(100,100));
         ui->listWidget_file->setResizeMode(QListView::Adjust);
         ui->listWidget_file->setViewMode(QListView::IconMode);
@@ -31,18 +39,48 @@ videoWidget::videoWidget(QWidget *parent) :
         //设置全选
         //ui->listWidget_file->selectAll();
         ui->listWidget_file->setSpacing(12);
-        QPixmap objPixmap(tempFile);
-        tempFile=tempFile.remove(QString("E:/tech_practise/T3_linux/T3_Linux/T3_Linux/image/"),Qt::CaseSensitive);
-        QListWidgetItem *pItem = new QListWidgetItem(QIcon(objPixmap.scaled(QSize(70,50))),tempFile);
-        pItem->setSizeHint(QSize(70,70));            //设置单元项的宽度和高度
+        //生成缩略图文件
+        const QString cmd="E:\\tech_practise\\T3_linux\\T3_linux\\T3_linux\\shared\\bin\\ffmpeg.exe";
+        QStringList arg;
+        arg.append("-i");
+        arg.append("E:\\tech_practise\\T3_linux\\T3_linux\\T3_linux\\video\\"+tempFileName);
+        arg.append("-y");
+        arg.append("-r");
+        arg.append("1");
+        arg.append("-f");
+        arg.append("image2");
+        arg.append("-ss");
+        arg.append("00:00:10");
+        arg.append("-t");
+        arg.append("00:00:01");
+        arg.append(tempFileName_NoSuffix+".jpg");
+        qDebug()<<"arg:"<<arg;
+        const QString now_dir="E:\\tech_practise\\T3_linux\\T3_linux\\T3_linux";
+        QProcess::startDetached(cmd,arg,now_dir);
+        QString file_path="E:\\tech_practise\\T3_linux\\T3_linux\\T3_linux\\"+tempFileName_NoSuffix+".jpg";
+        qDebug()<<file_path;
+        QPixmap objPixmap(file_path);
+        //tempFile=tempFile.remove(QString("E:/tech_practise/T3_linux/T3_Linux/T3_Linux/image/"),Qt::CaseSensitive);
+        QListWidgetItem *pItem = new QListWidgetItem(QIcon(objPixmap.scaled(QSize(90,70))),tempFile);
+        pItem->setSizeHint(QSize(90,90));            //设置单元项的宽度和高度
 
-        ui->listWidget_file->addItem(pItem);              //添加QListWidgetItem项
-
+        ui->listWidget_file->addItem(pItem);              //添加QListWidgetItem
     }
     ui->listWidget_file->setGeometry(NULL,NULL,455,209);
+    connect(ui->listWidget_file,SIGNAL(clicked(QModelIndex)),this,SLOT(play_video(QModelIndex)));
 }
 
 videoWidget::~videoWidget()
 {
     delete ui;
+}
+void videoWidget::play_video(QModelIndex pos)
+{
+    QListWidgetItem* item=ui->listWidget_file->currentItem();
+    qDebug()<<"filename"<<item->text();
+    qDebug()<<"点击了"<<pos.row();
+    which_filename_to_play=item->text();
+//    which_pic_show_big=pos.row();
+    video_view=new Video_view();
+    video_view->exec();
 }

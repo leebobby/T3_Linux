@@ -19,6 +19,7 @@ pictureWidget::pictureWidget(QWidget *parent) :
     ui->listWidget_file->clear();
     while (m_DirIterator.hasNext()) {
         QString tempFile=m_DirIterator.next();
+        qDebug()<<"当前文件信息为："<<tempFile;
         ui->listWidget_file->setIconSize(QSize(100,100));
         ui->listWidget_file->setResizeMode(QListView::Adjust);
         ui->listWidget_file->setViewMode(QListView::IconMode);

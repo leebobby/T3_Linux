@@ -9,6 +9,7 @@
 #include <QString>
 #include <QLabel>
 #include <QScrollArea>
+#include <QBoxLayout>
 namespace Ui {
 class Picture_view;
 }
