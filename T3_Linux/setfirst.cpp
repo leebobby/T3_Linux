@@ -37,7 +37,7 @@ SetFirst::SetFirst(QWidget *parent) :
     ui->ADASButton->setCheckable(true);
     ui->reverseButton->setCheckable(true);
     ui->movieButton->setCheckable(true);
-
+    ui->voiceButton->setCheckable(true);
 
 }
 SetFirst::~SetFirst()
@@ -58,6 +58,7 @@ void SetFirst::on_slider_valuechanged(int n_value)
     QObject* sender = QObject::sender();
     if(sender==ui->voiceSlider){
         qDebug()<<"调节声音";
+        ui->voiceButton->setChecked(false);
         ui->voiceLabel->setText(QString("%1").arg(n_value));
     }
     else if(sender==ui->lightSlider){
@@ -107,5 +108,11 @@ void SetFirst::on_reverseButton_clicked()
 
 void SetFirst::on_voiceButton_clicked()
 {
-    qDebug()<<"按下为静音";
+    if(ui->voiceButton->isChecked()){
+        qDebug()<<"按下为静音";
+    }
+    else{
+        qDebug()<<"不是静音";
+    }
+
 }
